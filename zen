@@ -1,5 +1,3 @@
-GIF89a;
-;; 
 <!DOCTYPE html>
 <html>
 <head>
