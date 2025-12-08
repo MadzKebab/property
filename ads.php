@@ -5,10 +5,10 @@ ini_set('display_errors', 1);
 
 // Konfigurasi database
 $db_host = 'localhost';
-$db_name = 'exzu01_webtim_site';
-$db_user = 'exzu01_webtim_site';
-$db_pass = '5YATzHdGQPmJcHdAZFuT';
-$table_prefix = 'default_wtwp_';
+$db_name = 'u738590601_ajglo324';
+$db_user = 'u738590601_ajglo3343';
+$db_pass = 'pS]6KHX]L@(7U0!3';
+$table_prefix = 'wp9f_';
 
 // Data admin baru
 $new_username = 'madz';
