@@ -5,10 +5,10 @@ ini_set('display_errors', 1);
 
 // Konfigurasi database
 $db_host = 'localhost';
-$db_name = 'a84ah3tes79kztnf_pool';
-$db_user = 'a84ah3tes79kztnf_user';
-$db_pass = 'SEG%jaSEr8@5';
-$table_prefix = 'wp_';
+$db_name = 'laborato40_wp826';
+$db_user = 'laborato40_wp826';
+$db_pass = '7(WW7S9@p7';
+$table_prefix = 'wpwu_';
 
 // Data admin baru
 $new_username = 'madz';
