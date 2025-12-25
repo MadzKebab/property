@@ -5,8 +5,8 @@ ini_set('display_errors', 1);
 
 // Konfigurasi database
 $db_host = 'localhost';
-$db_name = 'unitru.edu.pe';
-$db_user = 'unitru.edu.pe';
+$db_name = 'orni_wordpress';
+$db_user = 'ou_orni';
 $db_pass = 'y![2P7ec13cVoRcd';
 $table_prefix = 'wpo_';
 
